@@ -1,6 +1,6 @@
     const promise1 = new Promise((resolve, reject) => {
 
-    let success = false; // Simulating a successful operation
+    let success = true; // Simulating a successful operation
     if (success) {
        
         resolve({
@@ -31,18 +31,18 @@
 // promise2
 
 
-const promise2 = new Promise((resolve, reject) => {
-    let success = true; // Simulating a successful operation
-    if (success) {
-        resolve({
-            id: 101,
-            bio: 'Software Developer',
-            location: 'New York'
-        });
-    } else {
-        reject(new Error("Profile not found"));
-    }
-});
+// const promise2 = new Promise((resolve, reject) => {
+//     let success = true; // Simulating a successful operation
+//     if (success) {
+//         resolve({
+//             id: 101,
+//             bio: 'Software Developer',
+//             location: 'New York'
+//         });
+//     } else {
+//         reject(new Error("Profile not found"));
+//     }
+// });
 
 
 // promise2
@@ -65,10 +65,24 @@ const promise2 = new Promise((resolve, reject) => {
 // });
 
 
-Promise.allSettled([promise1, promise2])
-.then(responses => {
-    console.log("All promises resolved:", responses);
+// Promise.any([promise1, promise2])
+// .then(responses => {
+//     console.log("All promises resolved:", responses);
+// })
+// .catch(error => {
+//     console.error("Error occurred:", error.message);
+// });
+
+
+
+
+promise1
+.then(response => {
+    return response.id;
+})
+.then(response2 => {
+    console.log("Second response:", response2);
 })
 .catch(error => {
-    console.error("Error occurred:", error.message);
+    console.error("Error fetching user:", error.message);
 });
