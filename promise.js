@@ -1,6 +1,6 @@
     const promise1 = new Promise((resolve, reject) => {
 
-    let success = true; // Simulating a successful operation
+    let success = false; // Simulating a successful operation
     if (success) {
        
         resolve({
@@ -18,8 +18,9 @@
 
 promise1
 .then(response => {
-    console.log(response)
+    console.log("user fetched successfully", response)
 })
 .catch(error => {
-    console.error(error)
-})
+    console.error("Error fetching user:", error.message);
+});
+
