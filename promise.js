@@ -17,5 +17,9 @@
 })
 
 promise1
-.then()
-.catch()
+.then(response => {
+    console.log(response)
+})
+.catch(error => {
+    console.error(error)
+})
