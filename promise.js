@@ -1,6 +1,6 @@
     const promise1 = new Promise((resolve, reject) => {
 
-    let success = true; // Simulating a successful operation
+    let success = false; // Simulating a successful operation
     if (success) {
        
         resolve({
@@ -44,10 +44,31 @@ const promise2 = new Promise((resolve, reject) => {
     }
 });
 
-promise2
-.then(response => {
-    console.log("Profile fetched successfully", response);
+
+// promise2
+// .then(response => {
+//     console.log("Profile fetched successfully", response);
+// })
+// .catch(error => {
+//     console.error("Error fetching profile:", error.message);
+// });
+
+
+
+
+// Promise.all([promise1, promise2])
+// .then(responses => {
+//     console.log("All promises resolved:", responses);
+// })
+// .catch(error => {
+//     console.error("Error occurred:", error.message);
+// });
+
+
+Promise.allSettled([promise1, promise2])
+.then(responses => {
+    console.log("All promises resolved:", responses);
 })
 .catch(error => {
-    console.error("Error fetching profile:", error.message);
+    console.error("Error occurred:", error.message);
 });
