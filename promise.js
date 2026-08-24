@@ -1,4 +1,5 @@
-    const promise1 = new Promise((resolve, reject) => {
+    function fetchUserData () {
+        return new Promise((resolve, reject) => {
 
     let success = true; // Simulating a successful operation
     if (success) {
@@ -14,7 +15,8 @@
 
         }
     
-})
+});
+    }
 
 // promise1
 // .then(response => {
