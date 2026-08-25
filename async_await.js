@@ -24,7 +24,7 @@
             const user = await fetchUserData();
             console.log("user fetched successfully", user);
         } catch (error) {
-            console.log("Error fetching user:", `${error.message}`);
+            console.("Error fetching user:", `${error.message}`);
         }
     }
     getUser();
