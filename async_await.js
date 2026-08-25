@@ -1,7 +1,7 @@
  function fetchUserData () {
         return new Promise((resolve, reject) => {
 
-    let success = true; // Simulating a successful operation
+    let success = false; // Simulating a successful operation
     if (success) {
        
         resolve({
@@ -24,7 +24,7 @@
             const user = await fetchUserData();
             console.log("user fetched successfully", user);
         } catch (error) {
-            console.("Error fetching user:", `${error.message}`);
+            console.error("Error fetching user:", `${error.message}`);
         }
     }
     getUser();
